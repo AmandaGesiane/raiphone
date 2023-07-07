@@ -34,6 +34,12 @@
               <div class="form-group">
                 <input type="text" id="descricao" name="descricao" class="form-control " placeholder="Inclua a descrição do produto" v-model="registerProductForm.descricao"/>
               </div>
+              <div class="form-group">
+                <input type="text" id="estoque" name="estoque" class="form-control " placeholder="Inclua o estoque do produto" v-model="registerProductForm.estoque" :class="{'is-invalid': isSubmitted && $v.registerProductForm.estoque.$error,}"/>
+                <div v-if="isSubmitted && !$v.registerProductForm.estoque.$error" class="invalid-feedback">
+                  <span v-if="!$v.registerProductForm.estoque.required">O campo estoque é obrigatório!</span>
+                </div>
+              </div>
               <!--INÍCIO BLOCO: Botão-->
               <center>
                 <button @click="submitRegisterProduct" class="btn btn-block w-75 my-4" id="navbar">Cadastrar Produto</button>

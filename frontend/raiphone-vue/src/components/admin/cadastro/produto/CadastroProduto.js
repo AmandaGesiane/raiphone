@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import { required } from 'vuelidate/lib/validators'
+import { required } from 'vuelidate/lib/validators';
 import RegisterProductService from '@/services/RegisterProductService';
 import VueJwtDecode from 'vue-jwt-decode';
 
@@ -11,7 +11,8 @@ export default {
       registerProductForm: {
         name: null,
         valor: null,
-        descricao: null
+        descricao: null,
+        estoque: null,
       },
       isSubmitted: false,
     };
@@ -20,6 +21,7 @@ export default {
     registerProductForm: {
       nome: { required },
       valor: { required },
+      estoque: { required },
     },
   },
 

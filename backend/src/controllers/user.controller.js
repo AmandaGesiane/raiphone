@@ -103,11 +103,20 @@ exports.registerNewContact = async (req, res) => {
 exports.returnUserProfile = async (req, res) => {
   await res.json(req.userData);
 };
+exports.returnProducts = async (req, res) => {
+  try {
+    const Productslist = await Product.find({});
+    await res.json(Productslist);
+    console.log(Productslist);
+  } catch (error) {
+      return res.status(400).json({message: 'Erro ao buscar produtos' });
+  }
+}
 // ==> Método responsável por retornar chamados
 exports.returnCalls = async (req, res) => {
   try {
     const userCallsData = await Contact.find();
-    await res.json(req.userCallsData);
+    await res.json(userCallsData);
     console.log(userCallsData);
   } catch (error) {
     console.log(error);

@@ -18,4 +18,6 @@ router.get('/userCalls', userController.returnCalls);
 router.post('/registerContact', userController.registerNewContact);
 // ==> Rota responsável por criar um novo produto: (POST): localhost:3000/api/v1/registerNewProduct
 router.post('/registerProduct', userController.registerNewProduct);
+// ==> Rota responsável por criar um novo produto: (POST): localhost:3000/api/v1/registerNewProduct
+router.get('/products', userController.returnProducts);
 module.exports = router;
